@@ -16,6 +16,8 @@
 		D9761FE91ACE7FC600FFBECA /* HypnosisterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D9761FE81ACE7FC600FFBECA /* HypnosisterTests.m */; };
 		D9761FF71ACE897D00FFBECA /* Hypnosis.m in Sources */ = {isa = PBXBuildFile; fileRef = D9761FF61ACE897D00FFBECA /* Hypnosis.m */; };
 		D9761FF91ACE976800FFBECA /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = D9761FF81ACE976800FFBECA /* logo.png */; };
+		D9761FFB1ACEC5D900FFBECA /* VmbQIxTG_400x400-2.png in Resources */ = {isa = PBXBuildFile; fileRef = D9761FFA1ACEC5D900FFBECA /* VmbQIxTG_400x400-2.png */; };
+		D9761FFD1ACEC79F00FFBECA /* gatling_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = D9761FFC1ACEC79F00FFBECA /* gatling_logo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,8 @@
 		D9761FF51ACE897D00FFBECA /* Hypnosis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hypnosis.h; sourceTree = "<group>"; };
 		D9761FF61ACE897D00FFBECA /* Hypnosis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hypnosis.m; sourceTree = "<group>"; };
 		D9761FF81ACE976800FFBECA /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = "../../../../Downloads/Solutions/00-Resources/logo.png"; sourceTree = "<group>"; };
+		D9761FFA1ACEC5D900FFBECA /* VmbQIxTG_400x400-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "VmbQIxTG_400x400-2.png"; path = "../../../../Downloads/VmbQIxTG_400x400-2.png"; sourceTree = "<group>"; };
+		D9761FFC1ACEC79F00FFBECA /* gatling_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gatling_logo.png; path = ../../../../Downloads/gatling_logo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,8 @@
 			isa = PBXGroup;
 			children = (
 				D9761FF81ACE976800FFBECA /* logo.png */,
+				D9761FFC1ACEC79F00FFBECA /* gatling_logo.png */,
+				D9761FFA1ACEC5D900FFBECA /* VmbQIxTG_400x400-2.png */,
 				D9761FCD1ACE7FC600FFBECA /* Info.plist */,
 				D9761FCE1ACE7FC600FFBECA /* main.m */,
 			);
@@ -211,6 +217,8 @@
 				D9761FD81ACE7FC600FFBECA /* Main.storyboard in Resources */,
 				D9761FDD1ACE7FC600FFBECA /* LaunchScreen.xib in Resources */,
 				D9761FDA1ACE7FC600FFBECA /* Images.xcassets in Resources */,
+				D9761FFB1ACEC5D900FFBECA /* VmbQIxTG_400x400-2.png in Resources */,
+				D9761FFD1ACEC79F00FFBECA /* gatling_logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

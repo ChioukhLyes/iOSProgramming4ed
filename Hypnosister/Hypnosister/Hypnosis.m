@@ -8,6 +8,11 @@
 
 #import "Hypnosis.h"
 
+@interface Hypnosis ()
+@property (strong, nonatomic) UIColor *circleColor;
+
+@end
+
 @implementation Hypnosis
 
 /*
@@ -26,7 +31,7 @@
     center.x = bounds.origin.x + bounds.size.width / 2;
     center.y = bounds.origin.y + bounds.size.height / 2;
     
-    UIImage *logoImage = [UIImage imageNamed:@"logo.png"];
+    UIImage *logoImage = [UIImage imageNamed:@"gatling_logo.png"];
     
     // The circle will be the largest that will fit in the view
     //float radius = (MIN(bounds.size.width, bounds.size.height) / 2);
@@ -57,11 +62,11 @@
     }
 
     
-    path.lineWidth = 3;
+    path.lineWidth = 5;
     
     // Configure the drawing color to light gray
-    [[UIColor lightGrayColor] setStroke];
-    
+    //[[UIColor lightGrayColor] setStroke];
+    [self.circleColor setStroke];
     
     
     // Draw the line!
@@ -71,12 +76,37 @@
     CGContextSetShadow(currentContext, CGSizeMake(8, 10), 1);
     //
     float width = bounds.size.width/2 - 200/2;
-    float height = bounds.size.height/2 - 250/2;
-    [logoImage drawInRect:CGRectMake(width,height,200,250)];
+    float height = bounds.size.height/2 - 200/2;
+    [logoImage drawInRect:CGRectMake(width,height,200,200)];
     
     
     CGContextRestoreGState(currentContext);
 
+}
+
+
+//ovveriding
+// When a finger touches the screen
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    NSLog(@"%@ was touched", self);
+    // Get 3 random numbers between 0 and 1
+    float red = (arc4random() % 100) / 100.0;
+    float green = (arc4random() % 100) / 100.0;
+    float blue = (arc4random() % 100) / 100.0;
+    UIColor *randomColor = [UIColor colorWithRed:red
+                                           green:green
+                                            blue:blue
+                                           alpha:1.0];
+    self.circleColor = randomColor;
+}
+
+
+
+- (void)setCircleColor:(UIColor *)circleColor
+{
+    _circleColor = circleColor;
+    [self setNeedsDisplay];
 }
 
 
@@ -86,6 +116,7 @@
     if (self) {
         // All BNRHypnosisViews start with a clear background color
         self.backgroundColor = [UIColor clearColor];
+        self.circleColor = [UIColor lightGrayColor];
     }
     return self;
 }

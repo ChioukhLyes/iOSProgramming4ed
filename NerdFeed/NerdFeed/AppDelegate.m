@@ -1,13 +1,14 @@
 //
 //  AppDelegate.m
-//  Hypnosister
+//  NerdFeed
 //
 //  Created by Chioukh Lyes on 03/04/2015.
 //  Copyright (c) 2015 Excilys. All rights reserved.
 //
 
 #import "AppDelegate.h"
-#import "Hypnosis.h"
+#import "ViewController.h"
+#import "WebViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,44 +18,19 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    ViewController *cvc =
+    [[ViewController alloc] initWithStyle:UITableViewStylePlain];
+    UINavigationController *masterNav =
+    [[UINavigationController alloc] initWithRootViewController:cvc];
     
-    //CGRect firstFrame = CGRectMake(160, 240, 150, 200);
-//
-    CGRect firstFrame = self.window.bounds;
-//
-    Hypnosis *firstView = [[Hypnosis alloc] initWithFrame:firstFrame];
-//
-//    firstView.backgroundColor = [UIColor orangeColor];
-//    
-    [self.window addSubview:firstView];
-//
+    WebViewController *wvc = [[WebViewController alloc] init];
+    cvc.webViewController = wvc;
     
-    
-    // Create CBRescts for frames
-    CGRect screenRect = self.window.bounds;
-    CGRect bigRect = screenRect;
-    bigRect.size.width *= 2.0;
-    bigRect.size.height *= 2.0;
-    
-    //screen sized
-    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:screenRect];
-//    [self.window addSubview:scrollView];
-    
-    //create suped sized
-    Hypnosis *hypnosis = [[Hypnosis alloc] initWithFrame:bigRect];
-//    hypnosis.backgroundColor = [UIColor orangeColor];
-    //tell the scroll
-    scrollView.contentSize = bigRect.size;
-    
+    self.window.rootViewController = masterNav;
     self.window.backgroundColor = [UIColor whiteColor];
-    
     [self.window makeKeyAndVisible];
-    
-    return YES;
-}
+    return YES;}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
